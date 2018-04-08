@@ -5,6 +5,7 @@ from PrintBanner import PrintBanner
 
 def main():
     """
+    Adapter: 継承パターン
     Bannerがどのような実装になっているか隠蔽されている
     """
     p = PrintBanner("Hello")
