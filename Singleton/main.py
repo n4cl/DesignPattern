@@ -5,17 +5,18 @@ class Singleton:
         print("インスタンスを生成しました。")
 
     @classmethod
-    def initialize(cls):
+    def __initialize(cls):
         cls.__singleton = Singleton()
 
     @classmethod
     def getInstance(cls):
+        if cls.__singleton is None:
+            cls.__initialize()
         return cls.__singleton
 
 
 def main():
     print("Start.")
-    Singleton.initialize()
     obj1 = Singleton.getInstance()
     obj2 = Singleton.getInstance()
     if obj1 == obj2:
