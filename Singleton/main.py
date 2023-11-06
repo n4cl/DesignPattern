@@ -10,6 +10,9 @@ class Singleton:
 
     @classmethod
     def getInstance(cls):
+        """
+        マルチスレッド下での動作を考慮していない
+        """
         if cls.__singleton is None:
             cls.__initialize()
         return cls.__singleton
